@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirección Aleatoria</title>
+</head>
+<body>
+  <script>
+    // Array de URLs a las que deseas redirigir
+    var urls = [
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=1",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=10",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=12",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=14",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=16",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=17",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=18",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=20",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=22",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=24",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=26",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=28",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=24",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=30",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=32",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=34",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=36",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=38",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=40",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=42",
+      "https://online.fliphtml5.com/qlffj/nljw/?fbclid=IwAR22BTpujfEfAcU0HsEMduWLMSYB6NhVi-FzCu91BpOLAwIcvGoo5dBYhGI#p=44",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=9",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=10",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=11",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=12",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=14",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=16",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=20",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=22",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=23",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=24",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=26",
+      "https://online.fliphtml5.com/qlffj/qcaz/?fbclid=IwAR0BviNHywh3JCkFdyg-u6Lw2bf73EtEromQKMVqbDr1h1l7WBZkX7Uc6XI#p=27",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=6",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=7",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=8",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=9",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=10",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=11",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=12",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=13",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=15",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=16",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=17",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=18",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=20",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=21",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=22",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=23",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=24",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=25",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=27",
+      "https://online.fliphtml5.com/qlffj/iwub/?fbclid=IwAR1Z7NO1H1OJF8Xy858T5QaPstgs_5Bo308MKHBfBXrWkxhrsjJi5ABFW8E#p=28",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=8",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=10",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=13",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=15",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=22",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=24",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=26",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=28",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=29",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=31",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=33",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=34",
+      "https://online.fliphtml5.com/qlffj/yuuf/?fbclid=IwAR2hh4Xjrtho-x0rsrbvbvCQCcDe3BayaqiUDmXSHMjjLLQqlTzbkXTtzU4#p=36",
+      "https://online.fliphtml5.com/qlffj/zuyx/?fbclid=IwAR32abBx5SHNOnc2b3JL-_Y5mAXDGCGZqbMEe9gOjMU1FfhT0OazPbo0PEI#p=6",
+      "https://online.fliphtml5.com/qlffj/zuyx/?fbclid=IwAR32abBx5SHNOnc2b3JL-_Y5mAXDGCGZqbMEe9gOjMU1FfhT0OazPbo0PEI#p=8",
+      "https://online.fliphtml5.com/qlffj/zuyx/?fbclid=IwAR32abBx5SHNOnc2b3JL-_Y5mAXDGCGZqbMEe9gOjMU1FfhT0OazPbo0PEI#p=10",
+      "https://online.fliphtml5.com/qlffj/zuyx/?fbclid=IwAR32abBx5SHNOnc2b3JL-_Y5mAXDGCGZqbMEe9gOjMU1FfhT0OazPbo0PEI#p=12",
+      "https://online.fliphtml5.com/qlffj/zuyx/?fbclid=IwAR32abBx5SHNOnc2b3JL-_Y5mAXDGCGZqbMEe9gOjMU1FfhT0OazPbo0PEI#p=24",
+      "https://online.fliphtml5.com/qlffj/zuyx/?fbclid=IwAR32abBx5SHNOnc2b3JL-_Y5mAXDGCGZqbMEe9gOjMU1FfhT0OazPbo0PEI#p=26",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=12",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=14",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=16",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=19",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=20",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=22",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=24",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=26",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=28",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=30",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=32",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=34",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=36",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=38",
+      "https://online.fliphtml5.com/qlffj/akxv/?fbclid=IwAR3W2nWQCK-lXa4cMue8ATAmbY4aJx46A8s-5pUuVBsAaOLgNvM2DvZt-fY#p=43",
+      // Agrega más URLs si es necesario
+    ];
+
+    // Función para redirigir aleatoriamente
+    function redirigirAleatoriamente() {
+      var indiceAleatorio = Math.floor(Math.random() * urls.length);
+      var urlRedireccion = urls[indiceAleatorio];
+      window.location.href = urlRedireccion;
+    }
+
+    // Llama a la función cuando se cargue la página
+    redirigirAleatoriamente();
+  </script>
+</body>
+</html>
